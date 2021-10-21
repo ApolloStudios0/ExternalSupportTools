@@ -141,7 +141,7 @@ namespace ExternalSupportTools.CommandFrames
 
         public async void InstallClassicShell() {
             #region Install Classic Shell
-            string DownloadURL = "https://github.com/NebulaFX/ExternalSupport/raw/master/Drivers/ClassicShellSetup64_4_3_1.msi";
+            string DownloadURL = "https://github.com/NebulaFX/PremierEPOS_ExtenalTools/raw/master/Drivers/ClassicShellSetup64_4_3_1.msi";
 
             using (var client = new WebClient())
             {

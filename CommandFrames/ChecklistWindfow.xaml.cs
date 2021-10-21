@@ -74,7 +74,7 @@ namespace ExternalSupportTools.CommandFrames
                         client.Headers.Add("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0)");
 
                         // Download URL's
-                        string Java_DownloadURL = "https://github.com/NebulaFX/ExternalSupport/raw/master/Drivers/JavaDownload.msi";
+                        string Java_DownloadURL = "https://github.com/NebulaFX/PremierEPOS_ExtenalTools/raw/master/Drivers/JavaDownload.msi";
 
                         // Notify Completion
                         client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadJavaComplete); // Notify and install if specified
@@ -144,7 +144,7 @@ namespace ExternalSupportTools.CommandFrames
                         client.Headers.Add("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0)");
 
                         // Download URL's
-                        string Wallpaper_URL = "https://github.com/NebulaFX/ExternalSupport/raw/master/Drivers/WALLPAPER.jpg";
+                        string Wallpaper_URL = "https://github.com/NebulaFX/PremierEPOS_ExtenalTools/raw/master/Drivers/WALLPAPER.jpg";
 
                         // Notify Completion
                         client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadWallpaper_Complete); // Notify and install if specified
