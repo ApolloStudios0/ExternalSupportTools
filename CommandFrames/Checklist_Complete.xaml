@@ -1,0 +1,97 @@
+﻿<Window x:Class="ExternalSupportTools.CommandFrames.Checklist_Complete"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExternalSupportTools.CommandFrames"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Title="Checklist_Complete" Height="650" Width="300">
+    <Grid x:Name="CheckList">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Border -->
+        <Rectangle MouseDown="Rectangle_MouseDown" Fill="Transparent" Grid.ColumnSpan="3" Stroke="#ff6e4f" StrokeThickness="3" Grid.RowSpan="20"/>
+
+        <!-- Business Name -->
+        <Label x:Name="BusinessName" Content="TheLongestBusinessNameICouldThinkOf"
+               HorizontalAlignment="Center" FontWeight="Bold" FontSize="15" Grid.ColumnSpan="3"/>
+
+        <!-- LEFT SIDE TEXT -->
+        <Label Content="PremierEPOS Installation" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Management Studio &amp; SQL" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Get License Key" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Install Optional Addons" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Install Fingerprint Software" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="AnyDesk ID" Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Install Java 32/64bit" Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Database(s) Work" Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Second Screen Graphics" Grid.Row="9" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Receipt Install &amp; Sizing" Grid.Row="10" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Open SQL Ports" Grid.Row="11" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Windows Updates" Grid.Row="12" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Test Cash Drawer &amp; OCD" Grid.Row="13" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Setup Mirroring To Server" Grid.Row="14" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <Label Content="Date Time &amp; Region" Grid.Row="15" Grid.ColumnSpan="2" Grid.Column="1"
+               VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+
+        <!-- CHECKLIST BOXES -->
+        <CheckBox x:Name="INSTALL_CHECKBOX" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="MANAGEMENTSTUDIO_CHECKBOX" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="LICENSEKEY_CHECKBOX" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="INSTALLADDITIONALOPTIONS_CHECKBOX" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="INSTALLFINGERPRINT_CHECKBOX" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="ANYDESKID_CHECKBOX" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="JAVA3264_CHECKBOX" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="DATABASEWORK_CHECKBOX" Grid.Row="8" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="SECONDSCREENGRAPHICS_CHECKBOX" Grid.Row="9" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="RECEIPTINSTALL_CHECKBOX" Grid.Row="10" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="OPENSQLPORTS_CHECKBOX" Grid.Row="11" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="WINDOWSUPDATES_CHECKBOX" Grid.Row="12" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="TESTCASHDRAWER_CHECKBOX" Grid.Row="13" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="SETUPMIRRRING_CHECKBOX" Grid.Row="14" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+        <CheckBox x:Name="DATETIMEREGION_CHECKBOX" Grid.Row="15" Grid.Column="2" HorizontalAlignment="Center" IsChecked="False" Background="Black"/>
+
+        <Image Source="/Images/Vector Logo Mix Green.png" Grid.Column="2" Grid.Row="15"
+               RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Bottom"
+               HorizontalAlignment="Right" Height="20" Margin="0,0,5,6" MouseDown="Image_MouseDown"/>
+    </Grid>
+</Window>

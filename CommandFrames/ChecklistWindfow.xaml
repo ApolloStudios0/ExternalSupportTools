@@ -1,0 +1,29 @@
+﻿<Window x:Class="ExternalSupportTools.CommandFrames.ChecklistWindfow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExternalSupportTools.CommandFrames"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="ChecklistWindfow" Height="250" Width="450">
+    <Grid>
+        <Rectangle Stroke="#ff6e4f" StrokeThickness="2" Fill="White"/>
+
+        <Label x:Name="LabelText" Content="Please Enter The Business Name" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"/>
+
+        <TextBox Width="420" Height="120" x:Name="BusinessName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                 FontSize="21" KeyDown="BusinessName_KeyDown"/>
+
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Content="X" BorderBrush="Transparent" BorderThickness="0"
+                Foreground="Black" FontSize="12" FontWeight="Bold" Background="Transparent" Click="Button_Click"/>
+        
+        <Label x:Name="LabelText_Copy" Content="EG: The John Doe Shop" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,27,0,0" FontSize="10"/>
+
+        <Label Content="LoadingText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Medium" x:Name="LoadingText" Visibility="Hidden"
+               Foreground="Black"/>
+
+        <ProgressBar Grid.Row="5" Grid.Column="6" Height="10" VerticalAlignment="Bottom" x:Name="ProggyBar" Foreground="#ff6e4f" Visibility="Hidden"/>
+    </Grid>
+</Window>

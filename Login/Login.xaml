@@ -1,0 +1,40 @@
+﻿<Window x:Class="ExternalSupportTools.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExternalSupportTools" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Login" Height="120" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!-- App Border -->
+        <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3" Fill="White" Stroke="#ff6e4f" MouseDown="Rectangle_MouseDown" x:Name="WindowBorderMain"
+                   StrokeThickness="3"/>
+
+        <!-- Supervisor Text -->
+        <Label Content="Please Enter Supervisor Password" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="14" FontWeight="Bold" Foreground="#ff6e4f" x:Name="MainLabelText"/>
+
+        <!-- 3141 Password -->
+        <PasswordBox x:Name="PasswordBox" Grid.Row="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                 FontSize="27" Width="250" BorderBrush="#ff6e4f" KeyDown="PasswordBox_KeyDown">
+        </PasswordBox>
+
+        <Image Source="/Images/Vector Logo Mix Green.png" RenderOptions.BitmapScalingMode="Fant"
+               VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Height="25"
+               Margin="5" MouseDown="Image_MouseDown"/>
+    </Grid>
+</Window>

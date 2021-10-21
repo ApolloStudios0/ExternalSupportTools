@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Vector Logo WHITE.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\12.jpg" />
+    <None Remove="Images\installer.jpg" />
+    <None Remove="Images\MainFormBG.png" />
+    <None Remove="Images\MainFormBG2.png" />
+    <None Remove="Images\Vector Logo Mix Green.png" />
+    <None Remove="Images\Vector Logo WHITE.ico" />
+    <None Remove="Images\Vector Logo WHITE.png" />
+    <None Remove="Images\wallpaper2you_517821.png" />
+    <None Remove="Images\win11bg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="NetFwTypeLib">
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>58fbcf7c-e7a9-467c-80b3-fc65e8fcca08</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.Powershell" Version="1.0.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
+    <PackageReference Include="Notifications.Wpf" Version="0.1.1" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="4.0.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
+    <PackageReference Include="TaskScheduler" Version="2.9.2" />
+    <PackageReference Include="WindowsFirewallHelper" Version="2.1.4.81" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WindowsFormsIntegration">
+      <HintPath>C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\WindowsFormsIntegration.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\12.jpg" />
+    <Resource Include="Images\installer.jpg" />
+    <Resource Include="Images\MainFormBG.png" />
+    <Resource Include="Images\MainFormBG2.png" />
+    <Resource Include="Images\Vector Logo Mix Green.png" />
+    <Resource Include="Images\Vector Logo WHITE.ico" />
+    <Resource Include="Images\Vector Logo WHITE.png" />
+    <Resource Include="Images\wallpaper2you_517821.png" />
+    <Resource Include="Images\win11bg.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
