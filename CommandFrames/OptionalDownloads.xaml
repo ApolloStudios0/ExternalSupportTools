@@ -8,6 +8,10 @@
       d:DesignHeight="250" d:DesignWidth="450"
       Title="OptionalDownloads">
 
+    <Page.Resources>
+        <FontFamily x:Key="barcodefont" >#EAN-13</FontFamily>
+    </Page.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,9 +27,6 @@
 
         <Rectangle Fill="White" Stroke="#ff6e4f" Grid.RowSpan="4" Grid.ColumnSpan="3" StrokeThickness="2"/>
 
-        <Button Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right"
-                Content="X" FontSize="12" x:Name="CloseButton" Click="CloseButton_Click" Background="Transparent" BorderBrush="Transparent"/>
-
         <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" x:Name="DownloadButton" Content="Download Selected" FontSize="11" BorderBrush="#ff6e4f" Background="Transparent" Margin="231,16,10,15"
                 Click="DownloadButton_Click"/>
 
@@ -35,5 +36,11 @@
         <CheckBox x:Name="ClassicShell" Foreground="#ff6e4f" Background="#ff6e4f" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="3,0,0,-5" Content="Classic Shell" Grid.Column="1" IsChecked="True" FontSize="15"/>
 
         <ProgressBar Grid.Row="3" Height="6" Foreground="#ff6e4f" x:Name="ProggyBar" Margin="231,0,10,8" VerticalAlignment="Bottom" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <Rectangle Fill="White" Grid.RowSpan="6" Grid.ColumnSpan="6" x:Name="BlankTheBackground" Visibility="Hidden"/>
+        <Label Grid.Column="1" Content="CustomersMACAddressHere" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="CustomersMACAddressLabel" Visibility="Hidden"/>
+        <Label Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="#EAN-13" FontSize="65" Content="XXX" x:Name="BarcodeFONTMAC" Visibility="Hidden"/>
+        <Button Grid.Column="3" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Content="X" FontSize="12" x:Name="CloseButton" Click="CloseButton_Click" Background="Transparent" BorderBrush="Transparent"/>
     </Grid>
 </Page>

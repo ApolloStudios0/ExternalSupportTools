@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EAN-13.ttf" />
     <None Remove="Images\12.jpg" />
     <None Remove="Images\installer.jpg" />
     <None Remove="Images\MainFormBG.png" />
@@ -50,6 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="EAN-13.ttf" />
     <Resource Include="Images\12.jpg" />
     <Resource Include="Images\installer.jpg" />
     <Resource Include="Images\MainFormBG.png" />

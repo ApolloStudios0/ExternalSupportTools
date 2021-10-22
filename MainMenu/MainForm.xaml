@@ -68,10 +68,11 @@
         <Button x:Name="SetupBackupButton" Grid.Column="1" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10" Content="Setup Backup" Click="SetupBackupButton_Click"/>
         <Button x:Name="StorageUse" Grid.Column="1" Grid.Row="1" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="View Storage" Click="StorageUse_Click"/>
         <Button x:Name="BeginCheckliste" Grid.Column="1" Grid.Row="2" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="Begin Checklist" Click="BeginChecklist_Click"/>
-
+        <Button x:Name="ShowMACBarcode" Grid.Column="2" Grid.Row="2" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="Show MAC" Click="ShowMACBarcode_Click_1"/>
+        
         <Button x:Name="AttatchDB" Grid.Column="3" Grid.Row="1" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="Attatch DB" Click="AttatchDB_Click"/>
         <Button x:Name="xx" Grid.Column="4" Grid.Row="1" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="Detatch DB" Click="StorageUse_Click"/>
-        <Button x:Name="xxx" Grid.Column="5" Grid.Row="1" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="" Click="StorageUse_Click"/>
+        <Button x:Name="OpenConsole" Grid.Column="5" Grid.Row="1" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="OpenConsole" Click="OpenConsole_Click"/>
 
         <Button x:Name="Hardware" Grid.Column="2" Grid.Row="1" BorderBrush="#ff6e4f" Foreground="#ff6e4f" Margin="10,0,10,-8" Content="View Hardware" Click="Hardware_Click"/>
         <Button x:Name="FixSqlButton" Grid.Column="2" BorderBrush="#ff6e4f" Margin="10" Foreground="#ff6e4f" Content="Fix SQL Server" Click="FixSqlButton_Click"/>

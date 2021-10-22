@@ -11,8 +11,10 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using WindowsFirewallHelper;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
+using Task = System.Threading.Tasks.Task;
 
 namespace ExternalSupportTools.MainMenu
 {
@@ -856,6 +858,7 @@ namespace ExternalSupportTools.MainMenu
             MainFrame.Content = OptionalDownloads;
         }
         #endregion
+        #endregion
 
         // Install SQL Server Files [Segments From Full Install]
         #region SQL Server Express + Studio Download
@@ -1008,6 +1011,9 @@ namespace ExternalSupportTools.MainMenu
         // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
         // THE BELOW SECTION IS UNDER HEAVY DEVELOPMENT
         // <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+        // Start Checklist
+        #region ChecklistLogic
         private void BeginChecklist_Click(object sender, RoutedEventArgs e)
         {
             var CautionMsg = MessageBox.Show("This feature is still under development. Please confirm you would like to continue", "Proceed?", MessageBoxButton.YesNo);
@@ -1022,9 +1028,6 @@ namespace ExternalSupportTools.MainMenu
                     break;
             }
         }
-
-        // This is the main function. Aims to take a till from step 1 > finish.
-        // I've saved the results as settings, so they can be referenced when printing the finalized PDF
         private void BeginChecklist()
         {
             CommandFrames.ChecklistWindfow checklist = new();
@@ -1033,11 +1036,76 @@ namespace ExternalSupportTools.MainMenu
 
         private void TestButtonSideBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
                 this.DragMove();
+        }
+
+        public static PhysicalAddress GetMacAddress()
+        {
+            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                // Only consider Ethernet network interfaces
+                if (nic.NetworkInterfaceType == NetworkInterfaceType.Ethernet &&
+                    nic.OperationalStatus == OperationalStatus.Up)
+                {
+                    return nic.GetPhysicalAddress();
+                }
             }
+            return null;
+        }
+
+        private void ShowMACBarcode_Click_1(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.CustomersMAC = GetMacAddress().ToString();
+            CommandFrames.OptionalDownloads optionalDownloads = new();
+            optionalDownloads.BlankTheBackground.Visibility = Visibility.Visible;
+            optionalDownloads.BarcodeFONTMAC.Visibility = Visibility.Visible;
+            optionalDownloads.CustomersMACAddressLabel.Visibility = Visibility.Visible;
+            MainFrame.Content = optionalDownloads;
+        }
+        #endregion
+
+        [DllImport("Kernel32")]
+        public static extern void AllocConsole();
+
+        [DllImport("Kernel32")]
+        public static extern void FreeConsole();
+
+        private async void OpenConsole_Click(object sender, RoutedEventArgs e)
+        {
+            // Title Screen
+            AllocConsole();
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.WriteLine("--------------------------------------------------");
+            Console.ResetColor();
+            Console.WriteLine("-- Checking Till Setup Files & Setup Procedures --");
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("");
+            Console.ResetColor();
+
+            // Show Values
+            if (Properties.Settings.Default.InstallPremierEPOSSoftware == true) { Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Install Software ... Sucessful"); } 
+            else { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Install Software ... Failed"); }
+            await Task.Delay(400);
+            if (Properties.Settings.Default.InstallSQLFiles == true) { Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Install Of SQL Files & Management Studio ... Sucessful"); }
+            else { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Install Of SQL Files & Management Studio  ... Failed"); }
+            await Task.Delay(400);
+            if (Properties.Settings.Default.InstallAnyDesk == true) { Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Install AnyDesk ... Sucessful"); }
+            else { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Install AnyDesk ... Failed"); }
+            await Task.Delay(400);
+            if (Properties.Settings.Default.InstallJava6432 == true) { Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Install Java 32 / 64 Bit ... Sucessful"); }
+            else { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Install Java 32 / 64 Bit ... Failed"); }
+            await Task.Delay(400);
+            if (Properties.Settings.Default.OpenSQLPorts == true) { Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Opened SQL Ports [1317/1434] ... Sucessful"); }
+            else { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Opened SQL Ports [1317/1434] ... Failed"); }
+            await Task.Delay(400);
+            if (Properties.Settings.Default.OCDCashDrawer == true) { Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Set OCD Custom & Test Cash Drawer ... Sucessful"); }
+            else { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Set OCD Custom & Test Cash Drawer ... Failed"); }
+            await Task.Delay(400);
+            if (Properties.Settings.Default.SetDateTimeRegion == true) { Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Set Date Time / Region ... Sucessful"); }
+            else { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Set Date Time / Region ... Failed"); }
+
         }
     }
 }
-#endregion

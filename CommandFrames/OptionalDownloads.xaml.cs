@@ -21,6 +21,10 @@ namespace ExternalSupportTools.CommandFrames
             {
                 Directory.CreateDirectory(directory);
             }
+
+            // Load Barcodes, If Visible
+            BarcodeFONTMAC.Content = Properties.Settings.Default.CustomersMAC;
+            CustomersMACAddressLabel.Content = Properties.Settings.Default.CustomersMAC;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
