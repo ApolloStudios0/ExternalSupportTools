@@ -10,11 +10,63 @@
         AllowsTransparency="True"
         Background="Transparent"
         Title="Login_Form" Height="550" Width="300">
+
+    <!-- Rounded Corners Template-->
+    <Window.Resources>
+        <ControlTemplate x:Key="RoundTextboxCornterTemplate" TargetType="{x:Type PasswordBox}">
+            <Border Background="{TemplateBinding Background}"   
+         x:Name="Bd" BorderBrush="#1666e1"  
+         BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+
     <Grid>
         <!-- Background Rounded Form -->
-        <Rectangle Fill="White" RadiusX="5" RadiusY="5"/>
-        
+        <Rectangle Grid.ColumnSpan="6" Grid.RowSpan="6" Fill="White" RadiusX="13" RadiusY="12"/>
+
         <!-- Blue Top Image -->
-        <Image
+        <Image Grid.ColumnSpan="6" Grid.RowSpan="6" Source="/Images/LoginBG1.png" RenderOptions.BitmapScalingMode="Fant" MouseDown="Image_MouseDown"/>
+
+        <!-- Circular Box Around Login -->
+
+        <!-- Login [Expecting 3141 Password] -->
+        <PasswordBox Grid.ColumnSpan="3" Grid.Row="2" Password=""
+                 BorderBrush="#1666e1" BorderThickness="1" Margin="28,0,26,94"
+                 VerticalContentAlignment="Center" Foreground="#1666e1"
+                 FontSize="26" Template="{StaticResource RoundTextboxCornterTemplate}"
+                 KeyDown="Password_Enter" x:Name="PasswordBox"/>
+
+        <!-- Login Button -->
+        <Button Grid.Row="2" Grid.ColumnSpan="3" Height="40" Margin="27,49,27,48"
+                Content="Login" Background="#1666e1" Foreground="White"
+                FontWeight="Bold" Click="LoginButton_Click" x:Name="LoginButton"/>
+        <!-- Trademark -->
+        <Label Content="PremierEPOS External Support Tools" Grid.Row="6"
+               VerticalAlignment="Bottom" Grid.ColumnSpan="3" HorizontalAlignment="Center"
+               Foreground="#1666e1" FontWeight="Medium" Opacity="0.5" MouseDown="BypassLoginForm"/>
+
+        <!-- Login Text -->
+        <Label Content="Sign In" FontFamily="Calibri" FontWeight="Bold"
+               Foreground="#1666e1" Grid.Row="1" HorizontalAlignment="Center"
+               VerticalAlignment="Top" FontSize="21" Grid.ColumnSpan="3" Margin="0,68,0,0"/>
+
+        <!-- Close Button -->
+        <Button Content="X" Foreground="White" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Click="CloseButton" Background="Transparent" BorderBrush="Transparent"/>
+
+        <!-- Rows For Centering -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
     </Grid>
 </Window>

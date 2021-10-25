@@ -11,9 +11,20 @@
   <ItemGroup>
     <None Remove="EAN-13.ttf" />
     <None Remove="Images\12.jpg" />
+    <None Remove="Images\ComputerICON.png" />
+    <None Remove="Images\ComputerICON1.png" />
+    <None Remove="Images\ComputerICON2.png" />
+    <None Remove="Images\EposICON.png" />
     <None Remove="Images\installer.jpg" />
+    <None Remove="Images\lock.png" />
+    <None Remove="Images\lockblue.png" />
+    <None Remove="Images\LoginBG.png" />
+    <None Remove="Images\LoginBG1.png" />
     <None Remove="Images\MainFormBG.png" />
     <None Remove="Images\MainFormBG2.png" />
+    <None Remove="Images\MainMenuBackground.jpg" />
+    <None Remove="Images\MainMenuMainBG.png" />
+    <None Remove="Images\PrinterICON.png" />
     <None Remove="Images\Vector Logo Mix Green.png" />
     <None Remove="Images\Vector Logo WHITE.ico" />
     <None Remove="Images\Vector Logo WHITE.png" />
@@ -34,6 +45,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\ComputerICON.png" />
+    <Resource Include="Images\ComputerICON1.png" />
+    <Resource Include="Images\ComputerICON2.png" />
+    <Resource Include="Images\EposICON.png" />
+    <Resource Include="Images\MainMenuMainBG.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\MainMenuBackground.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\lockblue.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\lock.png" />
+    <Resource Include="Images\LoginBG1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Cake.Powershell" Version="1.0.1" />
     <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
     <PackageReference Include="Notifications.Wpf" Version="0.1.1" />
@@ -41,6 +77,7 @@
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="5.0.0" />
     <PackageReference Include="TaskScheduler" Version="2.9.2" />
+    <PackageReference Include="VirtualKeyboard.Wpf" Version="0.1.0" />
     <PackageReference Include="WindowsFirewallHelper" Version="2.1.4.81" />
   </ItemGroup>
 
@@ -54,8 +91,10 @@
     <Resource Include="EAN-13.ttf" />
     <Resource Include="Images\12.jpg" />
     <Resource Include="Images\installer.jpg" />
+    <Resource Include="Images\LoginBG.png" />
     <Resource Include="Images\MainFormBG.png" />
     <Resource Include="Images\MainFormBG2.png" />
+    <Resource Include="Images\PrinterICON.png" />
     <Resource Include="Images\Vector Logo Mix Green.png" />
     <Resource Include="Images\Vector Logo WHITE.ico" />
     <Resource Include="Images\Vector Logo WHITE.png" />
@@ -76,10 +115,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="[ Future Development ]\%40Main Menu\" />
   </ItemGroup>
 
 </Project>

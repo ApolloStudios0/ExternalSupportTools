@@ -1,0 +1,59 @@
+﻿<Page x:Class="ExternalSupportTools.__Future_Development__.Windows.Till_BackOffice_Installs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ExternalSupportTools.__Future_Development__.Windows"
+      mc:Ignorable="d" 
+      d:DesignHeight="660" d:DesignWidth="1050"
+      Title="Till_BackOffice_Installs">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- TILL 1-->
+        <Button Height="165" Background="#1666e1" Margin="3" x:Name="Till1Setup" Click="Till1Setup_Click">
+            <StackPanel>
+                <Label Content="Till 1 Setup" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       Margin="0,0,2,-190" FontSize="18"/>
+                <Image Source="/Images/eposICON.png" RenderOptions.BitmapScalingMode="Fant" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Margin="0,0,15,20"/>
+            </StackPanel>
+        </Button>
+
+        <!-- Back Office -->
+        <Button Height="165" Background="#1666e1" Grid.Column="1" Margin="3" x:Name="BackOffice" Click="BackOffice_Click">
+            <StackPanel>
+                <Label Content="Back-Office Setup" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       Margin="0,0,2,-190" FontSize="18"/>
+                <Image Source="/Images/ComputerICON2.png" RenderOptions.BitmapScalingMode="Fant" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Margin="0,0,15,27"/>
+            </StackPanel>
+        </Button>
+
+        <!-- Printer Drivers -->
+        <Button Height="165" Background="#1666e1" Grid.Column="2" Margin="3" x:Name="PrinterInstall" Click="PrinterInstall_Click">
+            <StackPanel>
+                <Label Content="Printer Installation" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       Margin="0,0,2,-190" FontSize="18"/>
+                <Image Source="/Images/PrinterICON.png" RenderOptions.BitmapScalingMode="Fant" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Margin="0,0,15,32"/>
+            </StackPanel>
+        </Button>
+
+        <Frame x:Name="MainFrame" Grid.RowSpan="4" Grid.ColumnSpan="6"/>
+    </Grid>
+</Page>
