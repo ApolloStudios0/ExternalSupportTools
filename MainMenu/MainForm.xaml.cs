@@ -590,7 +590,7 @@ namespace ExternalSupportTools.MainMenu
                         client.Headers.Add("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0)");
 
                         // Download URL's
-                        string CRRuntime_DownloadURL = "https://github.com/NebulaFX/ExternalSupport/raw/master/Drivers/CRRuntime_32bit_13_0.msi";
+                        string CRRuntime_DownloadURL = "https://github.com/NebulaFX/PremierEPOS_ExtenalTools/raw/master/Drivers/CRRuntime_32bit_13_0.msi";
 
                         // Notify Completion
                         client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadCRTCompleted); // Notify and install if specified
