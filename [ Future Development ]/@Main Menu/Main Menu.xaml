@@ -20,7 +20,7 @@
         
         <!-- Top Buttons -->
         <Button Content="Till &amp; Backoffice Setups" Foreground="White" FontWeight="Bold" x:Name="TILL_TAB" Click="LoadTillFrame"/>
-        <Button Content="Fixes &amp; Scripts" Foreground="White" FontWeight="Bold" Grid.Column="1" x:Name="FIXES_TAB" Click="LoadFixFrame"/>
+        <Button Content="Fixes, Scripts &amp; Programs" Foreground="White" FontWeight="Bold" Grid.Column="1" x:Name="FIXES_TAB" Click="LoadFixFrame"/>
         
         <!-- Frames -->
         <Frame x:Name="MainFrame" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="15" NavigationUIVisibility="Hidden"/>

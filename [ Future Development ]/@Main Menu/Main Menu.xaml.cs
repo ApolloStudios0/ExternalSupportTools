@@ -104,7 +104,7 @@ namespace ExternalSupportTools.__Future_Development__._Main_Menu
             FIXES_TAB.Opacity = 1;
             TILL_TAB.Opacity = 0.5;
 
-            MainFrame.Content = null;
+            MainFrame.Content = new Windows.FixesScriptsAndPrograms_Page();
         }
 
         private void LoadTillFrame(object sender, RoutedEventArgs e)

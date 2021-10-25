@@ -1,0 +1,45 @@
+﻿<Page x:Class="ExternalSupportTools.__Future_Development__.Windows.FixesScriptsAndPrograms_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ExternalSupportTools.__Future_Development__.Windows"
+      mc:Ignorable="d" 
+      d:DesignHeight="660" d:DesignWidth="1050"
+      Title="FixesScriptsAndPrograms_Page">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Height="140" Width="180" Background="#1666e1" Margin="5" x:Name="SystemHardware" Click="SystemHardware_Click">
+            <StackPanel>
+                <Label Content="Hardware Viewer" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="18"/>
+                <Label Content="View System Hardware" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="11"/>
+            </StackPanel>
+        </Button>
+
+        <Button Height="140" Width="180" Grid.Column="1" Background="#1666e1" Margin="5" x:Name="StorageViewer" Click="StorageViewer_Click">
+            <StackPanel>
+                <Label Content="Storage Viewer" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="18"/>
+                <Label Content="View System Storage" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="11"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>
