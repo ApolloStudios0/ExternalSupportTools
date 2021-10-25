@@ -41,5 +41,14 @@
                        FontSize="11"/>
             </StackPanel>
         </Button>
+
+        <Button Height="140" Width="180" Grid.Row="1" Background="#1666e1" Margin="5" x:Name="Backup" Click="Backup_Click">
+            <StackPanel>
+                <Label Content="Setup Backup" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="18"/>
+                <Label Content="Start An EPOS Backup" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="11"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>
