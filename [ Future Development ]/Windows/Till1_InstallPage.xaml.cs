@@ -252,6 +252,9 @@ namespace ExternalSupportTools.__Future_Development__.Windows
             // Notify Progression
             TheProgressTextBox.Text = TheProgressTextBox.Text + Environment.NewLine + "Downloaded EPOS Software Successfully";
             #endregion
+
+            // Notify Completion
+            TheProgressTextBox.Text = TheProgressTextBox.Text + Environment.NewLine + "--- SOFTWARE & DRIVER OPERATIONS COMPLETE ---";
         }
         private void EPOS_ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
@@ -316,6 +319,7 @@ namespace ExternalSupportTools.__Future_Development__.Windows
             await Task.Delay(10000);
             #region Download AnyDesk & Run Silently
             string DownloadURL = "https://download.anydesk.com/AnyDesk.msi";
+            TheProgressTextBox.Text = TheProgressTextBox.Text + Environment.NewLine + "AnyDesk Downloaded & Installed";
 
             using (var client = new WebClient())
             {
