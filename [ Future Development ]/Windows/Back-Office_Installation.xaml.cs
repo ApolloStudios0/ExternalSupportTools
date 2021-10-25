@@ -1,23 +1,13 @@
 ﻿using Notifications.Wpf;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WindowsFirewallHelper;
 
 namespace ExternalSupportTools.__Future_Development__.Windows
@@ -322,7 +312,7 @@ namespace ExternalSupportTools.__Future_Development__.Windows
                         string DOWNLOAD_URL = "https://github.com/NebulaFX/PremierEPOS_ExtenalTools/raw/master/Drivers/Users.mdb";
 
                         // Actual Download Execution
-                        this.Dispatcher.Invoke(async () =>
+                        await this.Dispatcher.Invoke(async () =>
                         {
                             client.DownloadFileAsync(new Uri(DOWNLOAD_URL), "Users.mdb");
 

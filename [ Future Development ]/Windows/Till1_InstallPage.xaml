@@ -50,7 +50,7 @@
         </Border>
 
         <!-- Full Installation -->
-        <ProgressBar Width="175" VerticalAlignment="Bottom" Margin="0,0,0,15" x:Name="ProggyBar" Foreground="#ff6e4f"/>
+        <ProgressBar Width="175" VerticalAlignment="Bottom" Margin="0,0,0,15" x:Name="EPOS_ProggyBar" Foreground="#ff6e4f"/>
         <Button Height="140" Width="180" Background="#1666e1" Margin="5" x:Name="SoftwareAndDrivers" Click="SoftwareAndDrivers_Click">
             <StackPanel>
                 <Label Content="Software &amp; Drivers" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
@@ -60,6 +60,7 @@
             </StackPanel>
         </Button>
 
+        <ProgressBar Width="175" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,15" x:Name="SQL_ProggyBar" Foreground="#ff6e4f"/>
         <Button Height="140" Width="180" Grid.Column="1" Background="#1666e1" Margin="5" x:Name="SQLFiles" Click="SQLFiles_Click">
             <StackPanel>
                 <Label Content="SQL Files" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
