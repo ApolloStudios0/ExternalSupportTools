@@ -68,9 +68,11 @@ namespace ExternalSupportTools
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainMenu.MainForm mainForm = new();
-            mainForm.Show();
-            this.Close();
+            //MainMenu.MainForm mainForm = new();
+            //mainForm.Show();
+            //this.Close();
+            __Future_Development__.Login.Login_Form login_Form = new();
+            login_Form.Show();
         }
     }
 }

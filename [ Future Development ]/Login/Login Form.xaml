@@ -1,0 +1,20 @@
+﻿<Window x:Class="ExternalSupportTools.__Future_Development__.Login.Login_Form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExternalSupportTools.__Future_Development__.Login"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="Login_Form" Height="550" Width="300">
+    <Grid>
+        <!-- Background Rounded Form -->
+        <Rectangle Fill="White" RadiusX="5" RadiusY="5"/>
+        
+        <!-- Blue Top Image -->
+        <Image
+    </Grid>
+</Window>

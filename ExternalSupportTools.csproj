@@ -78,4 +78,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="[ Future Development ]\%40Main Menu\" />
+  </ItemGroup>
+
 </Project>
