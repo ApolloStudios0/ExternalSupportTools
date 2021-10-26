@@ -88,7 +88,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="EAN-13.ttf" />
+    <Resource Include="[ Old Files ]\EAN-13.ttf" />
     <Resource Include="Images\12.jpg" />
     <Resource Include="Images\installer.jpg" />
     <Resource Include="Images\LoginBG.png" />
