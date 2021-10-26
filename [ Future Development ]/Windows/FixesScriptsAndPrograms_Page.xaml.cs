@@ -32,6 +32,15 @@ namespace ExternalSupportTools.__Future_Development__.Windows
         public FixesScriptsAndPrograms_Page()
         {
             InitializeComponent();
+
+            // Create Directory For File Saving
+            string directory = @"C:\SQLBACKUP";
+
+            // Create If It Doesn't Exist Already
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
         }
         #endregion
 
