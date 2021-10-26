@@ -53,6 +53,16 @@
                        Margin="0,0,15,32"/>
             </StackPanel>
         </Button>
+        
+        <!-- Administration -->
+        <Button Height="165" Background="#1666e1" Grid.Column="3" Margin="3" x:Name="Administration">
+            <StackPanel>
+                <Label Content="Administration" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       Margin="0,0,2,-190" FontSize="18"/>
+                <Image Source="/Images/adminICON.png" RenderOptions.BitmapScalingMode="Fant" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Margin="0,0,-2,30"/>
+            </StackPanel>
+        </Button>
 
         <Frame x:Name="MainFrame" Grid.RowSpan="4" Grid.ColumnSpan="6"/>
     </Grid>

@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="EAN-13.ttf" />
     <None Remove="Images\12.jpg" />
+    <None Remove="Images\adminICON.png" />
     <None Remove="Images\ComputerICON.png" />
     <None Remove="Images\ComputerICON1.png" />
     <None Remove="Images\ComputerICON2.png" />
@@ -45,6 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\adminICON.png" />
     <Resource Include="Images\ComputerICON.png" />
     <Resource Include="Images\ComputerICON1.png" />
     <Resource Include="Images\ComputerICON2.png" />
