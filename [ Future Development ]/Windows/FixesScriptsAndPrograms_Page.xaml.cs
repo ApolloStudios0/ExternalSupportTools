@@ -119,14 +119,14 @@ namespace ExternalSupportTools.__Future_Development__.Windows
                 else { Process.Start("SpaceSniffer.exe"); }
             }
             catch { MessageBox.Show("Unable to download SpaceSniffer."); }
-            #endregion
         }
+        #endregion
 
         // Backup
         #region Backup Logic
         private async void Backup_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Not Working Yet. Will Fix Tonight.");
+            TheMainFrame.Content = new CommandFrames.CommandFrame(); // Show UI
         }
         #endregion
     }

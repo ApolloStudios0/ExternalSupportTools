@@ -66,8 +66,8 @@ namespace ExternalSupportTools.CommandFrames
 
                 // Final Handoff
                 NavigationService.Navigate(null);
-                MainMenu.MainForm mainForm = new();
-                mainForm.BeginBatchExecution();
+                __Future_Development__.Configurations.StartBackupProcess startBackupProcess = new();
+                startBackupProcess.StartBatchExecution();
             }
         }
     }
