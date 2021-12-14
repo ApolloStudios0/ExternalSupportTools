@@ -21,6 +21,9 @@ namespace ExternalSupportTools.CommandFrames
         {
             InitializeComponent();
 
+            // Pre-Prompt Text
+            SQLText.Text = Environment.MachineName + @"\SQLEXPRESS";
+
             // Focus Textbox
             CustomersDB.Focus();
 
@@ -37,6 +40,7 @@ namespace ExternalSupportTools.CommandFrames
         {
             if (e.Key == Key.Return)
             {
+
                 // Save Customers DB Name
                 Properties.Settings.Default.CustomersDBName = CustomersDB.Text;
 

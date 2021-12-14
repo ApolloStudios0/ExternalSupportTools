@@ -70,6 +70,15 @@
             </StackPanel>
         </Button>
 
+        <Button Height="140" Width="180" Grid.Column="2" Background="#1666e1" Margin="5" x:Name="SAButton" Click="SAButton_Click">
+            <StackPanel>
+                <Label Content="SA Configuration" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="18"/>
+                <Label Content="Configure SA Account" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Calibri" FontWeight="Bold"
+                       FontSize="11"/>
+            </StackPanel>
+        </Button>
+
         <!-- Install Addons -->
         <Button Height="140" Width="180" Grid.Row="1" Background="#1666e1" Margin="5" x:Name="OptionalAddons" Click="OptionalAddons_Click">
             <StackPanel>

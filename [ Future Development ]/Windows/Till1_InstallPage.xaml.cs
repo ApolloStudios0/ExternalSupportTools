@@ -1,4 +1,5 @@
-﻿using Notifications.Wpf;
+﻿using ExternalSupportTools.__Future_Development__.Configurations;
+using Notifications.Wpf;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -266,93 +267,26 @@ namespace ExternalSupportTools.__Future_Development__.Windows
         #endregion
 
         // Install Optional Addons
-        #region OptionalAddons Logic
         private async void OptionalAddons_Click(object sender, RoutedEventArgs e)
         {
             // Mark Completion
             OptionalAddons.Opacity = 0.5;
 
             // Download Ninite
-            #region Download it, If its doesn't already exist
-            try
-            {
-                if (!File.Exists("OptionalDownloads.exe"))
-                {
-                    Thread thread = new(() =>
-                    {
-                        using (var client = new WebClient())
-                        {
-                            string NiniteDownloadURL = "https://github.com/NebulaFX/PremierEPOS_ExtenalTools/raw/master/Drivers/OptionalDownloads.exe";
-
-                            // Browser Request
-                            client.Headers.Add("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0)");
-
-                            // Download To Home Directory
-                            client.DownloadFileAsync(new Uri(NiniteDownloadURL), "OptionalDownloads.exe");
-
-                            // Notify [ No completion as its 125kb ]
-                            var notificationManager = new NotificationManager();
-
-                            notificationManager.Show(new NotificationContent
-                            {
-                                Title = "Downloading Additional Files",
-                                Message = $"Downloading Ninite Files...",
-                                Type = (Notifications.Wpf.NotificationType)NotificationType.Information
-                            });
-                        }
-                    });
-                    thread.Start();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Failed to download Ninite. Please manually add this to the home directory.", "Downloading Issue", MessageBoxButton.OK);
-            }
-            #endregion
+            await Utility.DownloadThisFile("https://github.com/NebulaFX/PremierEPOS_ExtenalTools/raw/master/Drivers/OptionalDownloads.exe", "OptionalDownloads.exe");
 
             // Run Ninite
-            #region Running Logic
-            try { System.Diagnostics.Process.Start("OptionalDownloads.exe"); } catch (Exception ex) { MessageBox.Show(ex.Message); }
-            #endregion
+            try { Process.Start("OptionalDownloads.exe"); } catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            // Wait 10 Seconds, Then Download AnyDesk & Silently Install It
-            await Task.Delay(10000);
-            #region Download AnyDesk & Run Silently
-            string DownloadURL = "https://download.anydesk.com/AnyDesk.msi";
-            TheProgressTextBox.Text = TheProgressTextBox.Text + Environment.NewLine + "AnyDesk Downloaded & Installed";
+            // Download & Install AnyDesk
+            await Utility.DownloadThisFile("https://download.anydesk.com/AnyDesk.msi", "AnyDesk.msi");
+            await Task.Delay(15000);
+            await Utility.InstallMSIFile("AnyDesk.msi");
 
-            using (var client = new WebClient())
-            {
-                try
-                {
-                    this.Dispatcher.Invoke(() =>
-                    {
-                        client.DownloadFileAsync(new Uri(DownloadURL), @"AnyDeskInstaller.msi");
-                    });
+            // Notify User Of Completion
+            TheProgressTextBox.Text += Environment.NewLine + "-- Installed Optional Addons & AnyDesk --";
 
-                    // Give 15 Seconds
-                    await Task.Delay(15000);
-
-                    // Install MSI Package
-                    Process installerProcess = new Process();
-                    ProcessStartInfo processInfo = new ProcessStartInfo();
-
-                    // Run & Install
-                    processInfo.Arguments = @"/i AnyDeskInstaller.msi /q";
-                    processInfo.FileName = "msiexec";
-                    installerProcess.StartInfo = processInfo;
-
-                    // Start Installer
-                    installerProcess.Start();
-                    installerProcess.WaitForExit();
-
-                    TheProgressTextBox.Text = TheProgressTextBox.Text + Environment.NewLine + "--- ADDITONAL OPERATIONS SUCCESSFUL ---";
-                }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
-            }
-            #endregion
         }
-        #endregion
 
         // Install SQL Files
         #region Install SQL Logic
@@ -551,9 +485,7 @@ namespace ExternalSupportTools.__Future_Development__.Windows
         private async void RunGlobalFixes_Click(object sender, RoutedEventArgs e)
         {
             // Mark Completion
-            #region Mark Completion
             RunGlobalFixes.Opacity = 0.5;
-            #endregion
 
             // Open SQL Ports
             #region Open Ports
@@ -637,9 +569,7 @@ namespace ExternalSupportTools.__Future_Development__.Windows
             #endregion
 
             // Fix SQL Server
-            #region Fix SQL Server
             try { await FixSQLServerAsync(); } catch { MessageBox.Show("SQL NOT INSTALLED"); }
-            #endregion
 
             // Set Region Settings
             #region Region Logic
@@ -682,5 +612,17 @@ namespace ExternalSupportTools.__Future_Development__.Windows
             TheProgressTextBox.Text = TheProgressTextBox.Text + Environment.NewLine + "--- GLOBAL SETTINGS OPERATION COMPLETE ---";
         }
         #endregion
+
+        private async void SAButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Mark Completion
+            SAButton.Opacity = 0.5;
+
+            // Enabled Mixed Mode
+            await Utility.ExecuteThisQuery(@"ENABLE MIXED MODE EXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE', N'Software\Microsoft\MSSQLServer\MSSQLServer', N'LoginMode', REG_DWORD, 2");
+
+            // Enable SA [Smith09Alpha]
+            await Utility.ExecuteThisQuery("ALTER LOGIN sa ENABLE ; GO ALTER LOGIN sa WITH PASSWORD = 'SMITH09ALPHA'; GO");
+        }
     }
 }
