@@ -1,6 +1,6 @@
-# PremierEPOS External Tools
+# External Tools
 
-External support tools, used by Premier EPOS for the backing up and installation of new EPOS systems.
+External support tools, used for the backing up and installation of new EPOS systems.
 
 ## Installation
 
